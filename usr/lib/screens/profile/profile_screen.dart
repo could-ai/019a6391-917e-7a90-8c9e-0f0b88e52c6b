@@ -137,59 +137,63 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 24),
                   // Statistics (for customers)
-                  if (user.role == UserRole.customer) ..[
-                    const Text(
-                      'الإحصائيات',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
+                  if (user.role == UserRole.customer)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: _buildStatCard(
-                            icon: Icons.shopping_bag,
-                            title: 'الطلبات',
-                            value: '0',
-                            color: Colors.blue,
+                        const Text(
+                          'الإحصائيات',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: _buildStatCard(
-                            icon: Icons.favorite,
-                            title: 'المفضلة',
-                            value: '0',
-                            color: Colors.red,
-                          ),
+                        const SizedBox(height: 16),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _buildStatCard(
+                                icon: Icons.shopping_bag,
+                                title: 'الطلبات',
+                                value: '0',
+                                color: Colors.blue,
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: _buildStatCard(
+                                icon: Icons.favorite,
+                                title: 'المفضلة',
+                                value: '0',
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _buildStatCard(
+                                icon: Icons.star,
+                                title: 'النقاط',
+                                value: '0',
+                                color: Colors.amber,
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: _buildStatCard(
+                                icon: Icons.rate_review,
+                                title: 'التقييمات',
+                                value: '0',
+                                color: Colors.green,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _buildStatCard(
-                            icon: Icons.star,
-                            title: 'النقاط',
-                            value: '0',
-                            color: Colors.amber,
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: _buildStatCard(
-                            icon: Icons.rate_review,
-                            title: 'التقييمات',
-                            value: '0',
-                            color: Colors.green,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
                   const SizedBox(height: 24),
                   // Action Buttons
                   const Text(
